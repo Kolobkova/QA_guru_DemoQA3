@@ -14,7 +14,6 @@ public class PracticeForm {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
         Configuration.timeout = 5000;
 
     }
@@ -51,7 +50,7 @@ public class PracticeForm {
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Tania Kolobkova"));
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("Tania@ya.ru"));
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
-        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("12345678"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("1234567890"));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("28 September,1980"));
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Maths"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports"));
