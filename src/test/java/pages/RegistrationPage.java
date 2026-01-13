@@ -6,6 +6,7 @@ import pages.components.CalendarComponent;
 import pages.components.TableResponsive;
 
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -25,7 +26,8 @@ public class RegistrationPage {
             stateDropdown = $("#state"),
             stateCityWrapper = $("#stateCity-wrapper"),
             cityDropdown = $("#city"),
-            submit = $("#submit");
+            submit = $("#submit"),
+            modalDialog = $(".modal-dialog");
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
@@ -34,6 +36,14 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
         //Открытие браузера
         open("/automation-practice-form");
+        return this;
+    }
+
+
+
+    public RegistrationPage removeBanners() {
+       executeJavaScript("$('#fixedban').remove();");
+       executeJavaScript("$('footer').remove()");
         return this;
     }
 
@@ -118,6 +128,12 @@ public class RegistrationPage {
 
     public RegistrationPage checkResult(String key, String value) {
         tableResponsive.setTableResponsiveData(key, value);
+
+        return this;
+    }
+
+    public RegistrationPage getModalDialog() {
+        modalDialog.shouldNotBe(visible);
 
         return this;
     }
