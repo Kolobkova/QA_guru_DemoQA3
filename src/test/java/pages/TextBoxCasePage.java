@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.JsSnippets;
 import pages.components.OutputTextBox;
 
 import static com.codeborne.selenide.Condition.text;
@@ -10,45 +11,45 @@ import static com.codeborne.selenide.Selenide.*;
 public class TextBoxCasePage {
 
     private SelenideElement
-            userNameInput =  $("#userName"),
-            userEmailInput =  $("#userEmail"),
+            userNameInput = $("#userName"),
+            userEmailInput = $("#userEmail"),
             currentAddressInput = $("#currentAddress"),
-            permanentAddressInput =  $("#permanentAddress"),
+            permanentAddressInput = $("#permanentAddress"),
             submit = $("#submit");
 
-OutputTextBox outputTextBox = new OutputTextBox();
+    OutputTextBox outputTextBox = new OutputTextBox();
+    JsSnippets jsSnippets = new JsSnippets();
 
-    public TextBoxCasePage openTextPage(){
+    public TextBoxCasePage openTextPage() {
         open("/text-box");
         return this;
     }
 
     public TextBoxCasePage removeBanner() {
-        //Удаленние баннеров рекламы
-        executeJavaScript("$('footer').remove();");
-        executeJavaScript("$('#fixedban').remove();");
+
+        jsSnippets.setRemoveBanners();
         return this;
     }
 
-    public TextBoxCasePage setUserName(String value){
+    public TextBoxCasePage setUserName(String value) {
 
         userNameInput.setValue(value);
         return this;
     }
 
-    public TextBoxCasePage setUserEmail(String value){
+    public TextBoxCasePage setUserEmail(String value) {
 
         userEmailInput.setValue(value);
         return this;
     }
 
-    public TextBoxCasePage setCurrentAddress(String value){
+    public TextBoxCasePage setCurrentAddress(String value) {
 
         currentAddressInput.setValue(value);
         return this;
     }
 
-    public TextBoxCasePage setPermanentAddress(String value){
+    public TextBoxCasePage setPermanentAddress(String value) {
 
         permanentAddressInput.setValue(value);
         return this;

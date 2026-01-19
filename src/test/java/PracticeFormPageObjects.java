@@ -7,7 +7,7 @@ public class PracticeFormPageObjects extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-//полная проверка успех
+
     @Test
     void successfullFillFormTest() {
 
@@ -43,7 +43,7 @@ public class PracticeFormPageObjects extends TestBase {
     }
 
 
-    //проверка только обязательных полей
+
     @Test
     void requiredFillFormTest() {
 
@@ -64,7 +64,7 @@ public class PracticeFormPageObjects extends TestBase {
                 .checkResult("Mobile", "1234567890")
                 .checkResult("Hobbies", "Sports");
     }
-    //негативная проверка
+
     @Test
     void negativeTest() {
 

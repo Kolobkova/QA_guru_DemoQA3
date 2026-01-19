@@ -3,6 +3,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
+import pages.components.JsSnippets;
 import pages.components.TableResponsive;
 
 
@@ -32,18 +33,17 @@ public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
     TableResponsive tableResponsive = new TableResponsive();
+    JsSnippets jsSnippets = new JsSnippets();
 
     public RegistrationPage openPage() {
-        //Открытие браузера
+
         open("/automation-practice-form");
         return this;
     }
 
 
-
     public RegistrationPage removeBanners() {
-       executeJavaScript("$('#fixedban').remove();");
-       executeJavaScript("$('footer').remove()");
+        jsSnippets.setRemoveBanners();
         return this;
     }
 
