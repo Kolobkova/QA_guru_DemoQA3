@@ -8,7 +8,7 @@ public class TextBoxCasePO extends TestBase {
     TextBoxCasePage textBoxCasePage = new TextBoxCasePage();
 
     @Test
-    void  fillFormTest() {
+    void fillFormTest() {
         textBoxCasePage.openTextPage()
                 .removeBanner()
                 .setUserName("Tanya")

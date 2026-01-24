@@ -1,11 +1,9 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.components.JsSnippets;
+import pages.utils.JsSnippets;
 import pages.components.OutputTextBox;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxCasePage {

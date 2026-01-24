@@ -3,7 +3,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
-import pages.components.JsSnippets;
+import pages.utils.JsSnippets;
 import pages.components.TableResponsive;
 
 
@@ -33,20 +33,14 @@ public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
     TableResponsive tableResponsive = new TableResponsive();
-    JsSnippets jsSnippets = new JsSnippets();
+
 
     public RegistrationPage openPage() {
 
         open("/automation-practice-form");
+        JsSnippets.setRemoveBanners();
         return this;
     }
-
-
-    public RegistrationPage removeBanners() {
-        jsSnippets.setRemoveBanners();
-        return this;
-    }
-
 
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);

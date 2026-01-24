@@ -12,7 +12,6 @@ public class PracticeFormPageObjects extends TestBase {
     void successfullFillFormTest() {
 
         registrationPage.openPage()
-                .removeBanners()
                 .setFirstName("Tania")
                 .setLastName("Kolobkova")
                 .setEmail("Tania@ya.ru")
@@ -43,12 +42,10 @@ public class PracticeFormPageObjects extends TestBase {
     }
 
 
-
     @Test
     void requiredFillFormTest() {
 
         registrationPage.openPage()
-                .removeBanners()
                 .setFirstName("Tania")
                 .setLastName("Kolobkova")
                 .setEmail("Tania@ya.ru")
@@ -69,8 +66,8 @@ public class PracticeFormPageObjects extends TestBase {
     void negativeTest() {
 
         registrationPage.openPage()
-                .removeBanners()
-                //.setFirstName("Tania")
+
+
                 .setLastName("Kolobkova")
                 .setEmail("Tania@ya.ru")
                 .setGender("Female")
@@ -78,7 +75,6 @@ public class PracticeFormPageObjects extends TestBase {
                 .setHobby("Sports")
                 .setSubmit()
                 .getModalDialog();
-
 
 
     }
